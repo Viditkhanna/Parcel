@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/profilepicprogressbar"
+                android:layout_marginTop="80dp"
+                android:layout_centerHorizontal="true"
+                />
+    <ImageView
+        android:layout_marginTop="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/profilepic"
+        />
+
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/plus"
+        android:background="@drawable/plus"
+        android:layout_alignBottom="@+id/profilepic"
+        android:layout_toEndOf="@+id/profilepic"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/plus"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/username"
+        />
+
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/testy"
+    android:layout_marginTop="180dp"
+    android:scaleType="fitXY"
+    />
+
+
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:id="@+id/myrecycler2"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+                </RelativeLayout>
+
+            </ScrollView>
+
