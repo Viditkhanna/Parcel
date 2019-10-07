@@ -48,13 +48,17 @@ class tiredy : AppCompatActivity() {
 
     private var mAuth=FirebaseAuth.getInstance()
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        Log.d("ssss", "sss")
+        menuInflater.inflate(R.menu.menu, menu)
 
+        return super.onCreateOptionsMenu(menu)
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tiredy)
-
         if (Build.VERSION.SDK_INT >= 23) {
             val writePermission = ActivityCompat.checkSelfPermission(this, Manifest.permission.INTERNET)
             val internetstate = ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_NETWORK_STATE)
@@ -79,7 +83,6 @@ class tiredy : AppCompatActivity() {
 
 
 
-        Toast.makeText(this, "oncreate", Toast.LENGTH_SHORT).show()
 //        Tabbed().finish()
 //        Tab1Fragment().fragmentManager!!.popBackStack()
         pb2.visibility = View.INVISIBLE
@@ -217,8 +220,8 @@ fun register(){
 //        var user=mAuth.currentUser
         //Toast.makeText(this,user.toString(),Toast.LENGTH_SHORT).show()
         var et=editText.text.trim()
-        if(et.toString().equals("")||editText2.text.toString().equals(""))
-            Toast.makeText(this, "Fill all the fields", Toast.LENGTH_SHORT).show()
+        if(et.toString().equals("")||editText2.text.toString().trim().equals(""))
+            Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show()
         else {
 
             pb2.visibility=View.VISIBLE

@@ -425,7 +425,6 @@ try {
 
 if(Tab3FragmentKt.getWhocalled().intValue()==1){
 
-    Toast.makeText(getApplicationContext(), Tab3FragmentKt.getWhocalled().toString(), Toast.LENGTH_SHORT).show();
 
     try{
         StorageReference ref=FirebaseStorage.getInstance().getReference("Profile pics").child(FirebaseAuth.getInstance().getUid());
@@ -445,7 +444,6 @@ if(Tab3FragmentKt.getWhocalled().intValue()==1){
                                             .child("Profile pic")
                                             .setValue(uri.toString());
 
-                                    Toast.makeText(getApplicationContext(), uri.toString(), Toast.LENGTH_SHORT).show();
                                 }
                             });
 
@@ -466,7 +464,6 @@ if(Tab3FragmentKt.getWhocalled().intValue()==1){
 else{
 
 
-    Toast.makeText(getApplicationContext(), Tab3FragmentKt.getWhocalled().toString(), Toast.LENGTH_SHORT).show();
 
     try{
         StorageReference ref=FirebaseStorage.getInstance().getReference("Cover pics").child(FirebaseAuth.getInstance().getUid());
@@ -556,7 +553,6 @@ else{
         } else {
             runOnUiThread(new Runnable() {
                 public void run() {
-                    Toast.makeText(CropImage.this,"Niche",Toast.LENGTH_SHORT).show();
 //                    Crouton.makeText(CropImage.this, "Image URL does not exist please try again", Style.ALERT).show();
                 }
             });

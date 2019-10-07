@@ -63,7 +63,6 @@ public class Croperino {
                         }
                         ctx.startActivity(new Intent(ctx,UploadProf.class));
 
-                        Toast.makeText(ctx,"onNegative",Toast.LENGTH_SHORT).show();
                             ctx.finish();
 
                     }

@@ -16,7 +16,9 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.AttributeSet
 import android.util.DisplayMetrics
+import android.util.Log
 import android.view.*
 import android.webkit.MimeTypeMap
 import android.widget.ImageView
@@ -67,6 +69,8 @@ class Tab1Fragment : Fragment() {
 lateinit var vieww:View
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
         super.onCreateOptionsMenu(menu, inflater)
+
+        Log.d("zzzz","zzzzz")
         inflater!!.inflate(R.menu.menu, menu);  // Use filter.xml from step 1
 
     }
@@ -85,7 +89,6 @@ lateinit var vieww:View
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-         setHasOptionsMenu(true);
 
 //        val  rootRef = FirebaseDatabase.getInstance().reference
 //        //database reference pointing to demo node
@@ -640,8 +643,8 @@ newupload.visibility=View.VISIBLE
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
          vieww = inflater.inflate(R.layout.tab1, container, false)
+        setHasOptionsMenu(true);
 //        Toast.makeText(activity, "OncreateView", Toast.LENGTH_SHORT).show()
         vieww.progresssignout.visibility=View.VISIBLE
        vieww. newupload.visibility=View.INVISIBLE
@@ -783,12 +786,18 @@ onDestroy()
 
                         override fun onDataChange(p0: DataSnapshot) {
                             if(p0.value==null){
+                                var text=TextView(context);
+                                text.textSize=15.3f;
+                                text.setTypeface(text.getTypeface(), Typeface.BOLD)
+                                text.setText("No Images, you can upload images or make Friends");
+                                val lp = RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT)
+                                lp.addRule(RelativeLayout.CENTER_HORIZONTAL)
+                                lp.addRule(RelativeLayout.CENTER_VERTICAL)
+                                text.layoutParams=lp
+                                tab1.addView(text);
                                 Toast.makeText(context, "Use the credentials given in the repository", Toast.LENGTH_LONG).show()
                                 vieww.progresssignout.visibility=View.INVISIBLE
-
-
                             }else{
-
                                 mRecyclerView.setLayoutManager(LinearLayoutManager(context))
 
 //        Toast.makeText(activity,storagereff.toString(),Toast.LENGTH_SHORT).show()

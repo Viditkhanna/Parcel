@@ -62,15 +62,12 @@ lateinit var database:FirebaseDatabase
 //                Upload(mUploads.toString())
 
 //                if(Upload().getImageUrl()==null || Upload().getImageUrl()=="")
-                    Toast.makeText(this@ImagesActivity,"Nulled",Toast.LENGTH_SHORT).show()
 //                mAdapter = ImageAdapter(this@ImagesActivity, mUploads)
 if(fileList().contains("empty.txt")){
-    Toast.makeText(this@ImagesActivity,"Empty",Toast.LENGTH_SHORT).show()
 }
                 mRecyclerView.adapter = mAdapter
                pb1.visibility=View.INVISIBLE
-                if(ImageAdapter().t==1)
-                    Toast.makeText(this@ImagesActivity,"Null",Toast.LENGTH_SHORT).show()
+                if(ImageAdapter().t==1){}
 
             }
 

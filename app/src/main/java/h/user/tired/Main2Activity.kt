@@ -38,8 +38,12 @@ class Main2Activity : AppCompatActivity() {
 
 
 ca.setOnClickListener {
+    if(name.text.isNotEmpty()&&email.text.isNotEmpty()&&password.text.isNotEmpty()&&repassword.text.isNotEmpty()){
     progress.visibility=View.VISIBLE
     register()
+    }else{
+        Toast.makeText(applicationContext,"Please fill all the fields",Toast.LENGTH_SHORT).show();
+    }
 }
 
 var mAuth=FirebaseAuth.getInstance()
@@ -61,13 +65,13 @@ fun popup(){
 fun register() {
     if (repassword.text.toString()== password.text.toString()) {
         try {
-            var mAuth = FirebaseAuth.getInstance()
-            var mDatabase: DatabaseReference = FirebaseDatabase.getInstance().getReference("Names")
+            val mAuth = FirebaseAuth.getInstance()
+            val mDatabase: DatabaseReference = FirebaseDatabase.getInstance().getReference("Names")
 
             mAuth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString()).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    var user = mAuth.currentUser
-                    var uid = user!!.uid
+                    val user = mAuth.currentUser
+                    val  uid = user!!.uid
                     mDatabase.child(uid).child("Name").setValue(name.text.toString().trim())
                     Toast.makeText(this, "Successfully registered :)", Toast.LENGTH_SHORT).show()
                     progress.visibility=View.INVISIBLE
@@ -77,16 +81,17 @@ fun register() {
 
                 } else {
                     try{
-                    var usercheck = mAuth.currentUser
+                    val usercheck = mAuth.currentUser
                         if(usercheck!=null&&usercheck.isEmailVerified){
                             Toast.makeText(this, "A user already exist with that e-mail", Toast.LENGTH_SHORT).show()
                         }else if(!task.isSuccessful) {
                         var ex=task.getException()
                         Toast.makeText(this, ex!!.message.toString(), Toast.LENGTH_SHORT).show()
-                    }}catch (ex:Exception){Toast.makeText(this,ex.message.toString(), Toast.LENGTH_SHORT).show()
+                            progress.visibility=View.INVISIBLE
+                        }}catch (ex:Exception){Toast.makeText(this,ex.message.toString()+"dsdsd", Toast.LENGTH_SHORT).show()
+                        progress.visibility=View.INVISIBLE
                     }
 
-                    progress.visibility=View.INVISIBLE
 
                 }
 

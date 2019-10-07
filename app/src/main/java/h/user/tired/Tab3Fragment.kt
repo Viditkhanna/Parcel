@@ -270,7 +270,6 @@ class Tab3Fragment : Fragment() {
                         }
 
                         override fun onDataChange(p0: DataSnapshot) {
-                            Toast.makeText(activity, "p0 is :" + p0.value.toString(), Toast.LENGTH_SHORT).show()
                             if (p0.value != null) {
                                 Glide.with(activity).load(p0.value.toString())
                                         .listener(object : RequestListener<Drawable> {

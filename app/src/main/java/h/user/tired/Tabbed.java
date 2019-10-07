@@ -44,11 +44,18 @@ public class Tabbed extends AppCompatActivity {
     private ViewPager mViewPager;
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        Log.d("ssss","sss");
+        getMenuInflater().inflate(R.menu.menu, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabbed);
-
-try {
+        try {
     mSectionsPageAdapter = new SectionsPageAdapter(getSupportFragmentManager(),this);
 
     // Set up the ViewPager with the sections adapter.
@@ -79,7 +86,6 @@ try {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-    Toast.makeText(getApplicationContext(),"hey",Toast.LENGTH_SHORT).show();
 finish();
         System.exit(1);
 intw=(Intent)new Intent(Intent.ACTION_MAIN);

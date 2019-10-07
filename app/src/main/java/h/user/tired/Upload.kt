@@ -18,7 +18,6 @@ init {
         //empty constructor needed
     }
 constructor(bmp:Bitmap,ctx:Context){
-    Toast.makeText(ctx,"Upload Bitmap",Toast.LENGTH_SHORT).show()
 
 
 
