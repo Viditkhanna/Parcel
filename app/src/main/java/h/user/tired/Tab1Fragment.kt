@@ -789,7 +789,7 @@ onDestroy()
                                 var text=TextView(context);
                                 text.textSize=15.3f;
                                 text.setTypeface(text.getTypeface(), Typeface.BOLD)
-                                text.setText("No Images, you can upload images or make Friends");
+                                text.setText("No Images, you can upload images or make friends");
                                 val lp = RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT)
                                 lp.addRule(RelativeLayout.CENTER_HORIZONTAL)
                                 lp.addRule(RelativeLayout.CENTER_VERTICAL)

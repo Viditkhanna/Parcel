@@ -19,8 +19,6 @@ class UploadProf : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        Toast.makeText(this,"I m here", Toast.LENGTH_SHORT).show()
-
         CroperinoConfig("Balli"+".jpg","Pictures/", Environment.getExternalStorageDirectory().path)
         CroperinoFileUtil.setupDirectory(this)
         if(CroperinoFileUtil.verifyStoragePermissions(this))
@@ -63,34 +61,23 @@ class UploadProf : AppCompatActivity() {
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
-        Toast.makeText(this, "RESULT NOT OK vidit", Toast.LENGTH_SHORT).show()
-
         try{
 
             if(requestCode==CroperinoConfig.REQUEST_TAKE_PHOTO) {
                 if (resultCode == Activity.RESULT_OK) {
-                    Toast.makeText(this,"1", Toast.LENGTH_SHORT).show()
-
                     Croperino.runCropImage(CroperinoFileUtil.getTempFile(), this, true, 1, 1, R.color.gray, R.color.gray_variant);
                 }
                 else {
-                    Toast.makeText(this, "RESULT NOT OK1", Toast.LENGTH_SHORT).show()
                     finish()
                 }
             }
           else  if(requestCode== CroperinoConfig.REQUEST_PICK_FILE){
                 try{
                     if (resultCode == Activity.RESULT_OK) {
-                        Toast.makeText(this, "2", Toast.LENGTH_SHORT).show()
-
-//                yeaa.setImageURI(data!!.data)
-
                         CroperinoFileUtil.newGalleryFile(data, this)
                         Croperino.runCropImage(CroperinoFileUtil.getTempFile(), this, true, 1, 1, R.color.gray, R.color.gray_variant);
                     }
                     else {
-                        Toast.makeText(this, "RESULT NOT OK2", Toast.LENGTH_SHORT).show()
                         finish()
                     }
                 }catch (ex:Exception){
@@ -100,12 +87,9 @@ class UploadProf : AppCompatActivity() {
 
            else if(requestCode== CroperinoConfig.REQUEST_CROP_PHOTO){
                 Toast.makeText(this,"3", Toast.LENGTH_SHORT).show()
-//            Toast.makeText(this,resultCode.toString() +" "+Activity.RESULT_OK.toString(),Toast.LENGTH_SHORT).show()
                 finish()
 
                 if (resultCode == Activity.RESULT_OK) {
-                    Toast.makeText(this, Activity.RESULT_OK.toString(), Toast.LENGTH_SHORT).show()
-
                     var i = Uri.fromFile(CroperinoFileUtil.getTempFile());
                     test1.setImageURI(i);
                 }}

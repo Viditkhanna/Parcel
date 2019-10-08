@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/tab1"
     android:background="@color/white"
     android:layout_width="match_parent"
@@ -44,6 +43,7 @@ android:layout_alignParentEnd="true"
 
 <android.support.v7.widget.RecyclerView
     android:layout_width="match_parent"
+    android:layout_marginTop="50dp"
     android:layout_height="match_parent"
     android:descendantFocusability="blocksDescendants"
     android:id="@+id/myrecycler"
@@ -63,42 +63,17 @@ android:layout_alignParentEnd="true"
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
         android:id="@+id/progresssignout"
-
-        android:layout_marginLeft="160dp"
+        android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
         />
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
         android:id="@+id/newupload"
 
-        android:layout_marginLeft="160dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         />
 
-    <!--<com.getbase.floatingactionbutton.FloatingActionsMenu-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/addfloatingbtn"-->
-        <!--android:layout_marginTop="300dp"-->
- <!--android:layout_marginLeft="300dp"-->
-        <!--app:fab_addButtonColorNormal="@color/pink"-->
-        <!--app:fab_addButtonColorPressed="@color/pink_pressed"-->
-        <!--app:fab_addButtonPlusIconColor="@color/white"-->
-        <!--&gt;-->
-        <!--<com.getbase.floatingactionbutton.AddFloatingActionButton-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--app:fabSize="mini"-->
-            <!--app:fab_colorNormal="#00ff8f"-->
-<!--app:fab_colorPressed="@color/white_pressed"-->
-            <!--app:fab_icon="@drawable/ic_add_plus_24dp"-->
-            <!--android:id="@+id/fab1"-->
-            <!--app:fab_title="Photo"-->
-
-            <!--/>-->
-
-
-    <!--</com.getbase.floatingactionbutton.FloatingActionsMenu>-->
 </RelativeLayout>

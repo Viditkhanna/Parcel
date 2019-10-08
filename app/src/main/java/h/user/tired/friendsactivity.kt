@@ -33,15 +33,10 @@ idandname=ArrayList<String>()
                 for(p1 in p0.children){
 
                     for(p2 in p1.children){
-                      //  Toast.makeText(this@friendsactivity,p1.key.toString(), Toast.LENGTH_SHORT).show()
                         var mAuth=FirebaseAuth.getInstance().uid
                         if(!mAuth.equals(p1.key.toString()))
                         if(p2.key.toString().equals("Name")){
                             idandname.add(p1.key.toString())
-//                            Toast.makeText(this@friendsactivity,p1.key.toString(),Toast.LENGTH_SHORT).show()
-//                            Toast.makeText(this@friendsactivity,p2.value.toString(), Toast.LENGTH_SHORT).show()
-                        //    var layouttext=RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT)
-                         //   layouttext.setMargins(275,100,0,0)
                             var usernames=TextView(this@friendsactivity)
 
                             rel.addView(usernames)
@@ -66,19 +61,15 @@ idandname=ArrayList<String>()
 
                                     override fun onDataChange(p0: DataSnapshot) {
                                   for(p in p0.children){
-                                  //  Toast.makeText(this@friendsactivity,p.key.toString()+p.value.toString(),Toast.LENGTH_SHORT).show()
                                     if(usernames.text.toString().equals(p.key.toString())){
                                        // Toast.makeText(this@friendsactivity,usernames.text.toString(),Toast.LENGTH_SHORT).show()
                                         var iv=ImageView(this@friendsactivity)
-                                     //   var layouttext2=RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT)
-                                     //   layouttext2.setMargins(450,0,0,0)
                                         rel.addView(iv)
                                         iv.setImageResource(R.drawable.alreadyfriend2)
                                         iv.y=usernames.y
                                         iv.x=usernames.x+350f
                                         iv.layoutParams.height=50
                                         iv.layoutParams.width=50
-                                        //iv.layoutParams=layouttext2
                                     }
                                     }
                                     }
@@ -101,7 +92,6 @@ idandname=ArrayList<String>()
                                 val uid:String=idandname[index-1]
                                 mRef.child("Names").child(mAuth.toString()).child("Friends").child(usernames.text.toString()).setValue(uid)
 
-                                    Toast.makeText(this@friendsactivity,uid.toString(),Toast.LENGTH_SHORT).show()
 
                             }
                     i=i+200}
