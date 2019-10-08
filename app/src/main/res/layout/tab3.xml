@@ -13,6 +13,14 @@
                 android:layout_marginTop="80dp"
                 android:layout_centerHorizontal="true"
                 />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/testy"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/bgimage"
+                        />
     <ImageView
         android:layout_marginTop="70dp"
         android:layout_centerHorizontal="true"
@@ -40,13 +48,7 @@
         android:id="@+id/username"
         />
 
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/testy"
-    android:layout_marginTop="180dp"
-    android:scaleType="fitXY"
-    />
+
 
 
 

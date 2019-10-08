@@ -6,37 +6,32 @@
     android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:id="@+id/upload"
-        android:text="@string/signout"
 
-        />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/upload"
+            android:text="@string/signout"
+            />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="170dp"
-        android:text="@string/find_friends"
-        android:id="@+id/findfriends"
-        />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="270dp"
-        android:text="@string/friends"
-        android:id="@+id/friends"
-        />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/find_friends"
+            android:id="@+id/findfriends"
+android:layout_alignParentEnd="true"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/friends"
+            android:layout_centerHorizontal="true"
 
-    <Button
-        android:id="@+id/message"
-        android:text="@string/message"
-        android:layout_marginTop="0dp"
-        android:layout_marginStart="90dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+            android:id="@+id/friends"
+            />
+
+
+
 
 
 
@@ -60,6 +55,7 @@
         android:id="@+id/addphoto"
         android:layout_width="25dp"
         android:layout_height="25dp"
+        android:text="Add"
         android:background="@drawable/plus"
         android:layout_marginTop="500dp"
         android:layout_marginLeft="350dp"
